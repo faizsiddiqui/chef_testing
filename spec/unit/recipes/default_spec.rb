@@ -20,7 +20,7 @@ describe 'chef_testing::default' do
     end
 
     it 'creates a file' do
-      expect { chef_run }.to create_file('/tmp/myfile.txt')
+      expect(chef_run).to create_file('/tmp/myfile.txt')
     end
   end
 
@@ -37,7 +37,7 @@ describe 'chef_testing::default' do
     end
 
     it 'creates a file' do
-      expect { chef_run }.to create_file('/tmp/myfile.txt')
+      expect(chef_run).to create_file('/tmp/myfile.txt')
     end
   end
 end
