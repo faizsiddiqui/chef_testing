@@ -1,4 +1,3 @@
 # chef_testing
 
-TODO: Enter the cookbook description here.
-
+Chef testing build pipeline on teamcity
