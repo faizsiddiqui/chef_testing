@@ -18,6 +18,10 @@ describe 'chef_testing::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+
+    it 'creates a file' do
+      expect { chef_run }.to create_file('/tmp/myfile.txt')
+    end
   end
 
   context 'When all attributes are default, on CentOS 7.4.1708' do
@@ -30,6 +34,10 @@ describe 'chef_testing::default' do
 
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
+    end
+
+    it 'creates a file' do
+      expect { chef_run }.to create_file('/tmp/myfile.txt')
     end
   end
 end
