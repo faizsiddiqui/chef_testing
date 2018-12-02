@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  server:
+    build: ./teamcity/server-image/
+    volumes:
+      - '~/Documents/Faiz/Projects/teamcity/data:/data/teamcity_server/datadir'
+      - '~/Documents/Faiz/Projects/teamcity/logs:/data/teamcity/logs'
+    ports:
+      - 8111:8111
+    environment:
+      - TEAMCITY_SERVER_MEM_OPTS="-Xmx750m"
+  agent:
+    build: ./teamcity/agent-image/
+    environment:
+      - SERVER_URL=server:8111
+
+# Scale agent - docker-compose scale agent=3
